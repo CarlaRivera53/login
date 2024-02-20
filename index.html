@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularia con Inicio de sesion</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Link fuera de Google-->
+    <link rel="preconnet" href="https://fonts.google.com">
+    <link rel="preconnet" href="https://fonts.google.com/specimen/Roboto" crossorigin>
+    <link href="https://fonts.google.com/specimen/Roboto" rel="stylesheet">
+    <!--Hoja de estilo local-->
+    <link rel="stylesheet" href="estilos.css">
+    <script defer src ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.uv.mx/"
+         class="tex -bg-success position-adsolute top-0 end-0 btn btn-link btn-sm px-3 py-0 rounded-0 text-
+        decoracion-none " title="Abrir en el sitio web de la universidad 
+        veracruzana">Universidad veracruzana</a>
+    </div>
+    <!--Contenedor principal-->
+    <div class="contenedor-grid">
+    <!--Lado izquierdo-->
+    <div class="lado-izquierdo"></div>
+    <!--Lado Derecho-->
+    <div class="lado-Derecho">
+        <div class="contenedor-login mx-4">
+            <h1 class="h3 text-center text-sucess">Demostraciones de desarrollo web</h1>
+            <h2 class="h5 text-center text-muted">practicas en clase</h2>
+            <form>
+            <div class="card mx-auto mt-3">
+              <div class="card-body">
+                <h5 class="card-card-title text-center">Inicio de sesion</h5>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label"> Correo electronico</label>
+                    <input tyoe =" email"class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                    <div id="emailHelp"class="form-text"> utiliza tu cuenta Institucional UV.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="Password">contraseña</label>
+                    <div class="input-group mb-3">
+                      <input class="form-control" type="password" id="password">
+                      <span class="input-group-text">
+                        <i class="bi bi-eye" id="togglePassword" style="cursor: pointer"></i>
+                      </span>
+                    </div>            
+                </div>
+                <script>
+                    const password =document.getElementById('Password');
+                    //agrego una respuesta al evento click del boton al lado del password
+                    document.getElementById('togglePassword').addEventListener('click', function() {
+                        //si es tipo "password", lo cambio a tipo 'text'
+                    if(password.getAttribute("type")=="password"){
+                        this.classList.remove('bi-eye');
+                        this.classList.add('bi-eyes-slash');
+                        password.setAttribute('type', 'text');
+                    }  else{
+                        //si es tipo 'text' lo cambio a tipo 'password'
+                        this.classList.remove('bi-eye-slash');
+                        this.classList.add('bi-eye');
+                        password.setAttribute('type', 'password');
+                    }   
+             });
+                </script>
+                <div class="text-center">
+                    <a class="btn btn-link text-decoration-none" data-bs-toggle ="modal"
+                    data-bs-target="#modalAviso">¿necesita ayuda para ingresar?</a>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <button type="submit" class="btn btn-primary">iniciar sesion</button>
+              </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <!--Modal aviso-->
+    <div class="modal fade" id="modalAviso" tabindex="-1" aria-labelledby="modalAvisolabel" aria-hidden="true">
+        <div class="modal-dialog modal -x1">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-tittle" id="modalAvisolabel">¿Necesita ayuda para ingresar?</h5>
+                    <button type="button" class="btn-close" daya-bs-dismiss="modal"aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <h4 class="text-center mb-3">verifique su cuenta institucional</h4>
+                        <p>
+                            En caso de presentar dificultades para acceder al sistema con la cuenta institucional, puede
+                            restablecer la contraseña en el siguiente enlace:
+                            <a href="https://dsia.uv.mx/CamCont/" target="-blank"
+                            class="text-decoration-none">Restablecer contraseña</a>
+                        </p>
+                        <p>
+                            tambien puede solicitar apoyo a los encargados de cada region los cuales se listan a continuacion:
+                        </p>
+                        <ul class="nav nav-tabs" id="my tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="xalapa-tab" data-bs-toggle="tab"
+                                data-bs-target="#xalapa-tab-pane" type="button"role="tab"
+                                aria-controls="xalapa-tab-pane" aria-selected="tru">xalapa</button>
+                            </li>
+                            -<li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="veracruz-tab" data-bs-toggle="tab"
+                                data-bs-target="#veracruz-tab-pane" type="button"role="tab"
+                                aria-controls="veracruz-tab-pane" aria-selected="tru">veracruz</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="poza-tab" data-bs-toggle="tab"
+                                data-bs-target="#poza-tab-pane" type="button"role="tab"
+                                aria-controls="poza-tab-pane" aria-selected="tru">poza rica </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="orizaba-tab" data-bs-toggle="tab"
+                                data-bs-target="#orizaba-tab-pane" type="button"role="tab"
+                                aria-controls="orizaba-tab-pane" aria-selected="tru">orizaba</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="coatza-tab" data-bs-toggle="tab"
+                                data-bs-target="#coatza-tab-pane" type="button"role="tab"
+                                aria-controls="coatza-tab-pane" aria-selected="tru">coatzacoalcos</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content border border-top-0 p-3" id="myTabContent">
+                            <div class="tab-pane fade show active " id="xalapa-tab-pane " role="tabpane1"
+                            aria-labelledby="home-tab"tabindex= "o">
+                            Departamentos de serviciosinformaticos de red <br/>
+                            lomas del estadio S/N edifico E piso 1 col.Zona Universitaria. Xalpa Ver. <br/>
+                            Tel:(228) 842-17190<br/>
+                            conmutador :(228) 842-17-00, 842-27-00 <br/>
+                            extension: 11542, 11001<br/>
+                            correo: depserv@uv.mx
+                        </div>
+                        <div class="tab-pane fade"id="veracruz-tab-pane" role="tabpane1"
+                        aria-labelledby="veracruz-tab" tabindex="0">
+                        coordinacion regional de la     DGTI <br/>
+                        USBI veracruz, Av. Juan Pablo II esq. Ruiz Cortines, Fracc. Costa Verde. Boca del Rio,
+                        ver <br/>
+                        conmutador:(229)755-20-00<br/>
+                        extension:22115<br/>
+                        correo:hlomeli@uv.mx
+                    </div>
+                    <div class="tab-pane fade"id="orizaba-tab-pane" role="tabpane1"
+                    aria-labelledby="orizaba-tab" tabindex="0">
+                    coordinacion regional de la     DGTI <br/>
+                    vice-reptoria, poniente 7 No.1383 orizaba, Ver. <br/>
+                    Tel:(272)725-94-17<br/>
+                    conmutador:(782)726-30-66<br/>
+                    extension:33203, 33205<br/>
+                    correo:elicherhernandez@uv.mx
+                    </div>
+                    <div class="tab-pane fade"id="Poza-tab-pane" role="tabpane1"
+                        aria-labelledby="poza-tab" tabindex="0">
+                        coordinacion regional de la     DGTI <br/>
+                        vice-reptoria, Blv. ruiz cortines No.306 entre justo sierra y cerdo, col. obras
+                        sociales. poza rica, Ver  <br/>
+                        conmutador:(782)822-58-78<br/>
+                        extension:41120<br/>
+                        correo:arboles@uv.mx
+                        </div>
+                        <div class="tab-pane fade"id="coatza-tab-pane" role="tabpane1"
+                        aria-labelledby="coatza-tab" tabindex="0">
+                        coordinacion regional de la     DGTI <br/>
+                        USBI coatzacoalcoskm 7.5, col. santa isabel. coatzacoalcos, Ver  <br/>
+                        Tel:(921)211-57-24<br/>
+                        conmutador:(921)211-57-00, ext. 51215<br/>
+                        Fax: (921)211-57-05 <br/>
+                        correo:edgarmartinez@uv.mx
+                        </div>
+                    </div>
+                </div>
+                <div class="conteiner mt-3">
+                    <h4 class="text-center mb-3" >informacion de contacto</h4>
+                    <p>si desea solicitar mayor informacion a la contraloria general, puede dirigirse alos sigientes contactos</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table light">
+                                <tr>
+                                    <th> nombre</th>
+                                    <th> E-mail</th>
+                                    <th> Extension</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> Mtro. Guillermo Vera Amaro</td>
+                                    <td>gvera@uv.mx</td>
+                                    <td>11533</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="moda-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"> cerrar</button>
+            </div>
+        </div>
+    </div> 
+ </div> 
+</body>
+</html>
